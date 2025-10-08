@@ -29,7 +29,7 @@ if st.button('Get Weather'):
     if w_info:
         st.metric(label="📍 City Name", value=f"{w_info['name']}")
 
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4, col5, col6, col7 = st.columns(7)
 
         with col1:
             st.metric(label="🌍 Longitude", value=f"{w_info['coord']['lon']}")
@@ -39,6 +39,20 @@ if st.button('Get Weather'):
 
         with col3:
             st.metric(label="🌡️ Temperature", value=f"{w_info['main']['temp']}")
+
+        with col4:
+            st.metric(label="🌡️ Feels Like", value=f"{w_info['main']['feels_like']}")
+
+        with col5:
+            st.metric(label="☀️ Weather", value=f"{w_info['weather']['description']}")
+
+        with col6:
+            st.metric(label="💧 Humidity", value=f"{w_info['main']['humidity']}")
+
+        with col7:
+            st.metric(label="💨 Wind Speed", value=f"{w_info['wind']['speed']}")
+
+            
 
             
 
